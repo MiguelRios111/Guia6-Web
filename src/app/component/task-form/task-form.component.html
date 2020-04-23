@@ -1,0 +1,19 @@
+<div class="card">
+
+    <div class="card-body">
+
+        <form (submit)="agregarTarea(nuevaTarea, nuevaDescripcion)" >
+            <div class="form-group">
+                <input #nuevaTarea class="form-control" type="text" placeholder="Titulo">
+            </div>
+
+            <div class="form-group">
+                <textarea #nuevaDescripcion class="form-control" name="" id="" cols="30" rows="10" placeholder="Descripcion" ></textarea>
+                
+            </div>
+
+            <button class="btn btn-success"> Enviar </button>
+
+        </form>
+    </div>
+</div>
