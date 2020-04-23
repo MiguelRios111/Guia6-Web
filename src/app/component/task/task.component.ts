@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Task } from '../../modelos/Task';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'component-task',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskComponent implements OnInit {
 
-  constructor() { }
+@Input() task: Task;
+
+  constructor(
+    public taskService: TaskService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  deleteTask(task:Task){
+   if(confirm("¿Desea eliminar la tarea?")){
+    this.taskService.deleteTask(task);}
+    
   }
 
 }

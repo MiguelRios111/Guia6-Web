@@ -1,1 +1,14 @@
-<p>task works!</p>
+<div class="card mb-2">
+    <div class="card-header d-flex justify-content-between align-item-center ">
+        {{task.title}}
+        <div>
+            <button class="btn btn-primary"(click)="task.hide=¡task.hide">Mostrar Tarea</button>
+            <button class="btn btn-danger" (click)="deleteTask(task)" >Eliminar Tarea</button>
+        </div>
+    </div>
+
+    <div class="card-body" [hidden]="task.hide">
+        {{task.description}}
+    </div>
+
+</div>

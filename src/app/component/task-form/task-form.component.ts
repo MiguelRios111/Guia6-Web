@@ -18,10 +18,14 @@ export class TaskFormComponent implements OnInit {
 
     console.log('puto', newTitle.value, newDescription.value)
     this.taskService.addTask({
-      title: newTitle.value, description: newDescription.value
-    })
-    
+      title: newTitle.value, description: newDescription.value , hide: true    })
+    console.log(this.taskService.getTask());
+      newTitle.value="";
+      newDescription.value="";
+
     return false;
   }
+
+
 
 }
